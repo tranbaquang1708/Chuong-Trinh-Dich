@@ -1,0 +1,37 @@
+#include <ctype.h>
+#include <string.h>
+
+int valid(char *word, int length) {
+  int i;
+  for (i = 0; i < length; i++) {
+    if (!isalpha(word[i])) retrun 0;
+  }
+  return 1;
+}
+
+int standardword(char *word, int length) {
+  int i;
+  if(word[length-1] == '.' || word[length-1] == ',' || word[length-1] == ')' || word[length-1] == '>' || word[length-1] == '\'' || word[length-1] == '\"') {
+    word[length-1] = '\0';
+    length--;
+  }
+  if (word[0] == '(' || word[0] == '<' || word[0] == '\'' || word[0] == '\"') {
+    memmove(word, word+1, length);
+    length--;
+  }
+
+  for (i = 0; i < length; i++) {
+    if (isalpha(word[i])) word[i] = tolower(word[i]);
+  }
+
+  return length;
+}
+
+int avalable(char *word, char **list, int lenlist) {
+  int i;
+  for (i = 0; i < lenlist; i++) {
+    if (strcmp(word, list[i]) == 0) return 1;
+  }
+  return 0;
+}
+				

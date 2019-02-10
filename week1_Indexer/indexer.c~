@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Nodes {
+  char word[45];
+  char line[45];
+  struct Nodes *next;
+} node;
+
+node* create(char newword[], char newline[]) {
+  node *newnode = (node*)malloc(sizeof(node));
+  if (newnode == NULL) {
+    printf("Cannot create a new node/n");
+  } else {
+    newnode->word = newword;
+    newnode->line = newline;
+    newnode->next = NULL;
+  }
+  return newnode;
+}
+
+int main() {
+  FILE *fptr1, *fptr2;
+  char filename1[] = "stopw.txt";
+  char filename2[] = "vanban.txt";
+  int newline = 0;
+  node* head;
+
+  if (((fptr1 = fopen(filename1, "r")) != NULL) && ((fptr2 = fopen(filename2, "r")) != NULL)) {
+    
+    
+    fclose(fptr1);
+    fclose(fptr2);
+  }
+}
+  
