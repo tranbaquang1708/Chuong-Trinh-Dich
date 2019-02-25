@@ -1,0 +1,2 @@
+#! /bin/bash
+./scanner ../test/example2.kpl | diff ../test/result2.txt -
