@@ -1,0 +1,11 @@
+PROGRAM TINHLUYTHUA;
+VAR  N:INTEGER;
+     F:INTEGER;
+     I:INTEGER;
+
+BEGIN
+ F:=1;
+ N:= 5;
+ IF N:= 0 THEN F:=1
+ ELSE FOR I:= 1 TO N DO F := F * I
+END.
